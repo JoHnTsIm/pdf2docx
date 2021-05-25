@@ -24,7 +24,7 @@ def pdf_file_location():
     file_paths = askopenfilenames(filetypes=[('PDF file', '*.pdf')])
     for files in file_paths:
         file_names.append(os.path.basename(str(files)))
-    print(file_names)
+    file_path_pdf_entry.delete(0, END)
     file_path_pdf_entry.insert(0, file_paths)
 
 
@@ -35,6 +35,7 @@ def docx_folder_location():
     after_convert_folder = filedialog.askdirectory()
     Tk().withdraw()
     folder_selected = after_convert_folder
+    file_path_docx_entry.delete(0, END)
     file_path_docx_entry.insert(0, folder_selected)
 
 
